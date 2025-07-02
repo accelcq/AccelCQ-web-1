@@ -10,6 +10,10 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const ConfidentialComputing = lazy(() => import('./pages/ConfidentialComputing'));
 const QuantumComputing = lazy(() => import('./pages/QuantumComputing'));
+const CaseStudies = lazy(() => import('./pages/CaseStudies'));
+const CaseStudyConfidentialComputing = lazy(() => import('./pages/CaseStudyConfidentialComputing'));
+const CaseStudyQuantum = lazy(() => import('./pages/CaseStudyQuantum'));
+const CaseStudyEnterprise = lazy(() => import('./pages/CaseStudyEnterprise'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -28,6 +32,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services/confidential-computing" element={<ConfidentialComputing />} />
             <Route path="/services/quantum-computing" element={<QuantumComputing />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies/confidential-computing" element={<CaseStudyConfidentialComputing />} />
+            <Route path="/case-studies/quantum-computing" element={<CaseStudyQuantum />} />
+            <Route path="/case-studies/togaf-enterprise-architecture" element={<CaseStudyEnterprise />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
