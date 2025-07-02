@@ -49,7 +49,9 @@ const Header = () => {
       <div className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
           <PieChart size={32} className="text-primary-600" />
-          <span className="text-xl font-bold text-gray-900">AccelCQ Inc</span>
+          <span className={`text-xl font-bold transition-colors duration-300 ${
+            isScrolled ? 'text-gray-900' : 'text-white'
+          }`}>AccelCQ Inc</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -58,7 +60,11 @@ const Header = () => {
             item.children ? (
               <div key={index} className="relative group">
                 <button 
-                  className="flex items-center text-gray-700 hover:text-primary-600 font-medium"
+                  className={`flex items-center font-medium transition-colors duration-300 ${
+                    isScrolled 
+                      ? 'text-gray-700 hover:text-primary-600' 
+                      : 'text-white hover:text-primary-300'
+                  }`}
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
                 >
                   {item.name}
@@ -87,8 +93,12 @@ const Header = () => {
                 key={index}
                 to={item.path}
                 className={({ isActive }) =>
-                  `font-medium ${
-                    isActive ? 'text-primary-600' : 'text-gray-700 hover:text-primary-600'
+                  `font-medium transition-colors duration-300 ${
+                    isActive 
+                      ? 'text-primary-600' 
+                      : isScrolled 
+                        ? 'text-gray-700 hover:text-primary-600' 
+                        : 'text-white hover:text-primary-300'
                   }`
                 }
               >
@@ -100,7 +110,9 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-700 focus:outline-none"
+          className={`md:hidden focus:outline-none transition-colors duration-300 ${
+            isScrolled ? 'text-gray-700' : 'text-white'
+          }`}
           onClick={toggleMenu}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >

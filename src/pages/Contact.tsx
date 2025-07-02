@@ -45,9 +45,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Office Location</h3>
                     <address className="not-italic text-gray-600">
-                      308 de Leon Ave<br />
-                      Fremont, CA 94539<br />
-                      USA
+                      308 De Leon Ave, Fremont<br />
+                      California, 94539, USA
                     </address>
                   </div>
                 </div>
