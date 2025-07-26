@@ -155,8 +155,8 @@ const QuantumComputing = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <img 
-                src="https://images.pexels.com/photos/8285167/pexels-photo-8285167.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="Quantum Computing Visualization" 
+                src="/pexels-pachon-in-motion-426015731-30547566.jpg" 
+                alt="Quantum Computing Technology" 
                 className="w-full h-auto" 
               />
             </motion.div>

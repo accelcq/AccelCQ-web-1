@@ -35,7 +35,8 @@ const About = () => {
     }
   ];
 
-  // Leadership team
+  // Leadership team - Commented out for now, will be restored later with more content
+  /*
   const teamMembers = [
     {
       name: 'Dr. Elena Rodriguez',
@@ -73,16 +74,17 @@ const About = () => {
       email: 'michael@accelcq.com'
     }
   ];
+  */
 
   return (
     <>
       <Helmet>
-        <title>About Us | AccelCQ Inc</title>
-        <meta name="description" content="Learn about AccelCQ Inc, our mission, values, and the team driving innovation in confidential and quantum computing." />
+        <title>About Us | AccelCQ LLC</title>
+        <meta name="description" content="Learn about AccelCQ LLC, our mission, values, and the team driving innovation in confidential and quantum computing." />
       </Helmet>
 
       <PageHeader 
-        title="About AccelCQ Inc"
+        title="About AccelCQ LLC"
         subtitle="A team of experts dedicated to revolutionizing secure and quantum computing"
         backgroundImage="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
@@ -115,7 +117,7 @@ const About = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-gray-600 mb-6 text-lg">
-                At AccelCQ Inc, our mission is to revolutionize computing by seamlessly integrating confidential computing security with quantum computing power, enabling organizations to process their most sensitive data with unprecedented speed and security.
+                At AccelCQ LLC, our mission is to revolutionize computing by seamlessly integrating confidential computing security with quantum computing power, enabling organizations to process their most sensitive data with unprecedented speed and security.
               </p>
               <p className="text-gray-600 mb-6">
                 Founded in 2021 by experts from leading technology companies and research institutions, AccelCQ was born from the recognition that as computing power advances, so too must the security protecting that data.
@@ -156,7 +158,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* 
+      Timeline Section - Commented out for now, will be restored later with more content
       <section className="section">
         <div className="container-custom">
           <SectionHeading
@@ -165,16 +168,16 @@ const About = () => {
           />
           
           <div className="relative">
-            {/* Timeline line */}
+            Timeline line
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary-100"></div>
             
             <div className="relative">
-              {/* Timeline items */}
+              Timeline items
               {[
                 {
                   year: '2021',
                   title: 'Company Founded',
-                  description: 'AccelCQ Inc was founded by Dr. Elena Rodriguez and James Chen in Fremont, California.'
+                  description: 'AccelCQ LLC was founded by Dr. Elena Rodriguez and James Chen in Fremont, California.'
                 },
                 {
                   year: '2022',
@@ -227,12 +230,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      Team Section - Commented out for now, will be restored later with more content
       <section className="section bg-gray-50">
         <div className="container-custom">
           <SectionHeading
             title="Our Leadership Team"
-            subtitle="Meet the experts driving innovation at AccelCQ Inc"
+            subtitle="Meet the experts driving innovation at AccelCQ LLC"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -251,27 +254,9 @@ const About = () => {
           </div>
         </div>
       </section>
+      */}
 
-      {/* Careers CTA */}
-      <section className="section bg-primary-600 text-white">
-        <div className="container-custom text-center">
-          <motion.div
-            variants={fadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Team</h2>
-            <p className="text-gray-100 max-w-3xl mx-auto mb-8 text-lg">
-              We're always looking for talented individuals who are passionate about pushing the boundaries of confidential and quantum computing.
-            </p>
-            <a href="/careers" className="btn bg-white text-primary-600 hover:bg-gray-100">
-              View Open Positions
-            </a>
-          </motion.div>
-        </div>
-      </section>
+
     </>
   );
 };

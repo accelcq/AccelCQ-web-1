@@ -64,7 +64,10 @@ const CaseStudyQuantum = () => {
                   <Play className="mr-2" size={18} />
                   Launch Quantum Demo
                 </a>
-                <Link to="/contact" className="btn btn-secondary">
+                <Link 
+                  to="/contact?subject=Quantum Computing&template=quantum-computing#contact-form" 
+                  className="btn btn-secondary"
+                >
                   Request Implementation
                 </Link>
               </div>
@@ -148,7 +151,10 @@ const CaseStudyQuantum = () => {
                 <ExternalLink className="mr-2" size={18} />
                 Try Quantum Demo
               </a>
-              <Link to="/contact" className="btn bg-purple-500 text-white hover:bg-purple-400">
+              <Link 
+                to="/contact?subject=Quantum Computing&template=quantum-computing#contact-form" 
+                className="btn bg-purple-500 text-white hover:bg-purple-400"
+              >
                 Schedule Consultation
               </Link>
             </div>

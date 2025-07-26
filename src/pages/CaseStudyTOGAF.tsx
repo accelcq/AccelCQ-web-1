@@ -14,7 +14,7 @@ const CaseStudyTOGAF = () => {
   const architectureLayers = [
     {
       layer: 'Business Architecture',
-      description: 'CDFI operations, regulatory compliance, and community development processes',
+      description: 'Financial operations, regulatory compliance, and business processes',
       status: 'Active',
       components: 12
     },
@@ -40,7 +40,7 @@ const CaseStudyTOGAF = () => {
 
   const exchangeMetrics = [
     { metric: 'Daily Transactions', value: '2,847', change: '+12%' },
-    { metric: 'CDFI Participants', value: '156', change: '+8%' },
+    { metric: 'Network Participants', value: '156', change: '+8%' },
     { metric: 'Total Volume', value: '$45.2M', change: '+23%' },
     { metric: 'System Uptime', value: '99.97%', change: '+0.02%' }
   ];
@@ -49,12 +49,12 @@ const CaseStudyTOGAF = () => {
     <>
       <Helmet>
         <title>TOGAF Enterprise Architecture Case Study | AccelCQ Inc</title>
-        <meta name="description" content="Explore our CDFI Bank Exchange demo showcasing TOGAF enterprise architecture principles and best practices in financial services." />
+        <meta name="description" content="Explore our Financial Exchange Platform demo showcasing TOGAF enterprise architecture principles and best practices in financial services." />
       </Helmet>
 
       <PageHeader 
         title="TOGAF Enterprise Architecture Case Study"
-        subtitle="CDFI Bank Exchange Platform with Enterprise Architecture Excellence"
+        subtitle="Financial Exchange Platform with Enterprise Architecture Excellence"
         backgroundImage="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
 
@@ -75,10 +75,10 @@ const CaseStudyTOGAF = () => {
               </div>
               
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                CDFI Bank Exchange Platform
+                Financial Exchange Platform
               </h2>
               <p className="text-gray-600 mb-6 text-lg">
-                Explore a comprehensive enterprise architecture implementation for Community Development Financial Institutions (CDFIs). Our demo showcases TOGAF 9.2 principles applied to create a secure, scalable, and compliant financial exchange platform.
+                Explore a comprehensive enterprise architecture implementation for financial institutions. Our demo showcases TOGAF 9.2 principles applied to create a secure, scalable, and compliant financial exchange platform.
               </p>
               
               <div className="bg-green-50 border border-green-100 rounded-lg p-6 mb-6">
@@ -111,7 +111,7 @@ const CaseStudyTOGAF = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-8 shadow-lg">
-                <h4 className="font-semibold mb-4 text-center">CDFI Exchange Dashboard</h4>
+                <h4 className="font-semibold mb-4 text-center">Financial Exchange Dashboard</h4>
                 
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   {exchangeMetrics.map((metric, index) => (
@@ -198,7 +198,7 @@ const CaseStudyTOGAF = () => {
               {
                 icon: <Shield size={24} />,
                 title: 'Regulatory Compliance',
-                description: 'Built-in compliance with banking regulations, AML, KYC, and FFIEC guidelines for CDFI operations.',
+                description: 'Built-in compliance with banking regulations, AML, KYC, and FFIEC guidelines for financial operations.',
                 features: ['SOX Compliance', 'AML/BSA Requirements', 'FFIEC Guidance', 'GDPR/CCPA Ready']
               },
               {
@@ -253,12 +253,12 @@ const CaseStudyTOGAF = () => {
               {
                 phase: 'Phase A',
                 title: 'Architecture Vision',
-                description: 'Define architecture vision, stakeholder requirements, and business case for CDFI exchange platform.'
+                description: 'Define architecture vision, stakeholder requirements, and business case for financial exchange platform.'
               },
               {
                 phase: 'Phase B-D',
                 title: 'Architecture Development',
-                description: 'Develop business, data, and application architectures aligned with CDFI operational requirements.'
+                description: 'Develop business, data, and application architectures aligned with financial operational requirements.'
               },
               {
                 phase: 'Phase E-F',
@@ -305,7 +305,7 @@ const CaseStudyTOGAF = () => {
               Ready to Transform Your Enterprise Architecture?
             </h2>
             <p className="text-green-100 max-w-3xl mx-auto mb-8 text-lg">
-              Experience the power of TOGAF-based enterprise architecture with our CDFI Bank Exchange demo. See how proper architecture governance can transform your organization's capabilities.
+              Experience the power of TOGAF-based enterprise architecture with our Financial Exchange Platform demo. See how proper architecture governance can transform your organization's capabilities.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <button className="btn bg-white text-green-600 hover:bg-gray-100">

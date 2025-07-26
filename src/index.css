@@ -10,6 +10,14 @@
   
   body {
     @apply text-gray-800 leading-relaxed;
+    opacity: 0;
+    animation: fadeInBody 0.3s ease-out 0.1s forwards;
+  }
+  
+  @keyframes fadeInBody {
+    to {
+      opacity: 1;
+    }
   }
   
   h1, h2, h3, h4, h5, h6 {

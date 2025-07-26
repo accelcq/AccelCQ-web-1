@@ -60,7 +60,14 @@ const BlogCard: React.FC<BlogCardProps> = ({
             alt={author.name} 
             className="w-8 h-8 rounded-full object-cover" 
           />
-          <span className="text-sm font-medium ml-2">{author.name}</span>
+          <a 
+            href="https://www.linkedin.com/in/priyaranjankumar1/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-sm font-medium ml-2 text-primary-600 hover:text-primary-700 transition-colors"
+          >
+            {author.name}
+          </a>
         </div>
       </div>
     </article>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Shield, Cpu, Server, BarChart, Code, Globe, Users, ArrowRight } from 'lucide-react';
+import { Shield, Cpu, Server, BarChart, Code, Globe, Users, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionHeading from '../components/common/SectionHeading';
 import ServiceCard from '../components/common/ServiceCard';
 
@@ -24,9 +24,51 @@ const staggerContainer = {
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     setIsVisible(true);
+  }, []);
+
+  // Carousel data for value propositions
+  const valuePropositions = [
+    {
+      title: 'Data Protection',
+      description: 'Enhanced security without compromising performance',
+      details: 'Our confidential computing solutions protect your data at all stages - at rest, in transit, and in use.',
+      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      icon: <Shield size={24} />,
+      color: 'primary'
+    },
+    {
+      title: 'Quantum Performance',
+      description: 'Exponential speed-ups for complex computations',
+      details: 'Leverage quantum algorithms to solve optimization and simulation problems exponentially faster.',
+      image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      icon: <Cpu size={24} />,
+      color: 'secondary'
+    },
+    {
+      title: 'Enterprise Scalability',
+      description: 'Production-ready solutions for any scale',
+      details: 'From startups to Fortune 500 companies, our solutions scale seamlessly with your business needs.',
+      image: 'https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      icon: <Server size={24} />,
+      color: 'accent'
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % valuePropositions.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + valuePropositions.length) % valuePropositions.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000); // Auto-advance every 5 seconds
+    return () => clearInterval(interval);
   }, []);
 
   // Services data
@@ -57,33 +99,13 @@ const Home = () => {
     }
   ];
 
-  // Testimonials data
-  const testimonials = [
-    {
-      quote: "AccelCQ's confidential computing solutions have transformed how we handle sensitive customer data, providing unmatched security while maintaining performance.",
-      author: "Sarah Johnson",
-      position: "CTO, FinSecure Inc.",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    },
-    {
-      quote: "The quantum computing expertise at AccelCQ helped us solve optimization problems that were previously intractable with classical computing methods.",
-      author: "Michael Chen",
-      position: "Head of R&D, Quantum Innovations",
-      image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    },
-    {
-      quote: "Working with AccelCQ has been a game-changer for our secure data processing needs. Their team's technical knowledge is exceptional.",
-      author: "Jennifer Lopez",
-      position: "CISO, HealthTech Solutions",
-      image: "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    }
-  ];
+
 
   // Stats data
   const stats = [
-    { value: '98%', label: 'Client Satisfaction' },
-    { value: '50+', label: 'Enterprise Clients' },
-    { value: '25+', label: 'Research Papers' },
+    { value: '99.9%', label: 'Uptime Reliability' },
+    { value: '< 1ms', label: 'Response Latency' },
+    { value: '24/7', label: 'System Monitoring' },
     { value: '3x', label: 'Performance Improvement' }
   ];
 
@@ -95,12 +117,13 @@ const Home = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative h-screen flex items-center">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-primary-900 opacity-90 z-0" />
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
+          className="absolute inset-0 z-0 bg-cover opacity-15"
           style={{ 
-            backgroundImage: "url('https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')"
+            backgroundImage: "url('/ChatGPT Image Jul 9, 2025, 02_13_06 PM.png')",
+            backgroundPosition: 'center 75%'
           }}
         />
 
@@ -112,14 +135,13 @@ const Home = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-3 py-1 bg-primary-600 text-white rounded-full text-sm font-medium mb-5">
-              Next-Generation Computing Solutions
+              Securing the AI Revolution
             </span>
             <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Secure Your Data<br />
-              <span className="text-primary-400">Accelerate Your Future</span>
+              Accelerating Confidential & Quantum <span className="text-primary-400">Computing</span>
             </h1>
             <p className="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl">
-              AccelCQ Inc delivers cutting-edge confidential computing and quantum computing solutions that protect your most sensitive data while unlocking unprecedented computational power.
+              Addressing Security, Scale & Performance in the AI Era
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="btn btn-primary">
@@ -161,7 +183,7 @@ const Home = () => {
         <div className="container-custom">
           <SectionHeading
             title="Our Services"
-            subtitle="AccelCQ offers innovative solutions at the intersection of confidential computing and quantum technologies, delivering unprecedented security and computational power."
+            subtitle="AccelCQ delivers next-generation confidential and quantum computing solutions that are production-ready today, transforming how enterprises secure and accelerate their most critical workloads."
           />
 
           <motion.div 
@@ -173,7 +195,7 @@ const Home = () => {
           >
             {services.map((service, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <ServiceCard {...service} />
+                <ServiceCard {...service} showLearnMore={false} />
               </motion.div>
             ))}
           </motion.div>
@@ -226,21 +248,74 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="rounded-lg overflow-hidden shadow-xl">
-                <img 
-                  src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                  alt="AccelCQ Team" 
-                  className="w-full h-auto" 
-                />
+              {/* Value Proposition Carousel */}
+              <div className="relative rounded-lg overflow-hidden shadow-xl">
+                <div className="relative h-80 md:h-96">
+                  {valuePropositions.map((slide, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-500 ${
+                        index === currentSlide ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    >
+                      <img 
+                        src={slide.image} 
+                        alt={slide.title} 
+                        className="w-full h-full object-cover" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm rounded-full p-2 text-white hover:bg-white/30 transition-colors"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm rounded-full p-2 text-white hover:bg-white/30 transition-colors"
+                >
+                  <ChevronRight size={20} />
+                </button>
+
+                {/* Slide Indicators */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  {valuePropositions.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-colors ${
+                        index === currentSlide ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg w-64">
+
+              {/* Current Slide Info Card */}
+              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg w-72">
                 <div className="flex items-start">
-                  <div className="bg-primary-50 p-2 rounded-md text-primary-600 mr-3">
-                    <BarChart size={24} />
+                  <div className={`p-2 rounded-md mr-3 ${
+                    valuePropositions[currentSlide].color === 'primary' ? 'bg-primary-50 text-primary-600' :
+                    valuePropositions[currentSlide].color === 'secondary' ? 'bg-secondary-50 text-secondary-600' :
+                    'bg-accent-50 text-accent-600'
+                  }`}>
+                    {valuePropositions[currentSlide].icon}
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">Data Protection</p>
-                    <p className="text-sm text-gray-600">Enhanced security without compromising performance</p>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-900 mb-1">
+                      {valuePropositions[currentSlide].title}
+                    </p>
+                    <p className="text-sm text-gray-600 mb-2">
+                      {valuePropositions[currentSlide].description}
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {valuePropositions[currentSlide].details}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -270,48 +345,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="section">
-        <div className="container-custom">
-          <SectionHeading
-            title="What Our Clients Say"
-            subtitle="Hear from organizations that have transformed their computing capabilities with our solutions."
-          />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div 
-                key={index}
-                className="card p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-600 italic mb-6">"{testimonial.quote}"</p>
-                <div className="flex items-center">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.author} 
-                    className="w-12 h-12 rounded-full object-cover mr-4" 
-                  />
-                  <div>
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-gray-500">{testimonial.position}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section bg-gradient-to-r from-primary-800 to-secondary-800 text-white">

@@ -55,12 +55,12 @@ const ConfidentialComputing = () => {
 
   // Benefits
   const benefits = [
-    'Protect data in use, not just at rest and in transit',
-    'Enable secure processing in untrusted environments',
-    'Reduce the attack surface for sensitive data processing',
-    'Meet regulatory compliance requirements for data privacy',
-    'Maintain data sovereignty in cloud environments',
-    'Enable secure multi-party computation and collaboration'
+    'Secure AI model training and inference without exposing sensitive data',
+    'Protect proprietary AI algorithms and machine learning models from theft',
+    'Enable privacy-preserving AI across multiple organizations and datasets',
+    'Secure federated learning while maintaining data sovereignty',
+    'Process sensitive training data for AI/ML without compromising privacy',
+    'Deploy confidential AI inference for healthcare, finance, and regulated industries'
   ];
 
   return (
@@ -284,7 +284,7 @@ const ConfidentialComputing = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Benefits</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">AI-Powered Benefits</h2>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start">

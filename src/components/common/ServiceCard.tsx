@@ -7,9 +7,10 @@ interface ServiceCardProps {
   description: string;
   icon: React.ReactNode;
   link: string;
+  showLearnMore?: boolean;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, link }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, link, showLearnMore = true }) => {
   return (
     <div className="card group h-full">
       <div className="p-6 flex flex-col h-full">
@@ -22,12 +23,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, lin
         <p className="text-gray-600 mb-4 flex-grow">
           {description}
         </p>
-        <Link 
-          to={link} 
-          className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 mt-2"
-        >
-          Learn more <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-        </Link>
+        {showLearnMore && (
+          <Link 
+            to={link} 
+            className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 mt-2"
+          >
+            Learn more <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -58,9 +58,9 @@ const CaseStudyConfidentialComputing = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center bg-gray-50 text-gray-600 px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center bg-green-50 text-green-600 px-4 py-2 rounded-full mb-6">
                 <Shield size={20} className="mr-2" />
-                <span className="font-medium">⏳ Live Demo Not Available</span>
+                <span className="font-medium">🚀 Live Demo Available</span>
               </div>
               
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -81,11 +81,19 @@ const CaseStudyConfidentialComputing = () => {
               </div>
               
               <div className="flex flex-wrap gap-4">
-                <button className="btn btn-primary opacity-50 cursor-not-allowed" disabled>
+                <a 
+                  href="http://40.71.80.56:8080/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
                   <Play className="mr-2" size={18} />
-                  Demo Coming Soon
-                </button>
-                <Link to="/contact" className="btn btn-secondary">
+                  View Live Demo
+                </a>
+                <Link 
+                  to="/contact?subject=Confidential Computing&template=confidential-computing#contact-form" 
+                  className="btn btn-secondary"
+                >
                   Request Implementation
                 </Link>
               </div>
@@ -186,11 +194,19 @@ const CaseStudyConfidentialComputing = () => {
               Experience the power of confidential computing with our sentiment analysis demo, then let's discuss implementing this technology for your specific needs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="btn bg-white text-gray-400 opacity-50 cursor-not-allowed" disabled>
+              <a 
+                href="http://40.71.80.56:8080/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn bg-white text-blue-600 hover:bg-gray-50"
+              >
                 <ExternalLink className="mr-2" size={18} />
-                Demo Coming Soon
-              </button>
-              <Link to="/contact" className="btn bg-blue-500 text-white hover:bg-blue-400">
+                View Live Demo
+              </a>
+              <Link 
+                to="/contact?subject=Confidential Computing&template=confidential-computing#contact-form" 
+                className="btn bg-blue-500 text-white hover:bg-blue-400"
+              >
                 Schedule Consultation
               </Link>
             </div>
