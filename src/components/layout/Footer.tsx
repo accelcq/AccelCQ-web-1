@@ -210,7 +210,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services/enterprise-architecture" className="text-gray-400 hover:text-primary-400 transition-colors">
+                <Link to="/services/enterprise-architecture#scripting-for-ea" className="text-gray-400 hover:text-primary-400 transition-colors">
                   Scripting for EA
                 </Link>
               </li>
@@ -238,28 +238,28 @@ const Footer = () => {
                 )}
                 
                 <form onSubmit={handleSubscribe} className="mb-4">
-                  <div className="flex flex-col space-y-2">
-                    <input
-                      type="email"
-                      placeholder="Your email"
-                      className="px-3 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500 text-sm"
+              <div className="flex flex-col space-y-2">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="px-3 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500 text-sm"
                       value={email}
                       onChange={(e) => {
                         setEmail(e.target.value);
                         setSubscriptionError('');
                       }}
                       disabled={isLoading}
-                      required
-                    />
-                    <button 
-                      type="submit" 
+                  required
+                />
+                <button 
+                  type="submit" 
                       className="bg-primary-600 hover:bg-primary-700 px-4 py-2 rounded-md transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                       disabled={isLoading}
-                    >
+                >
                       {isLoading ? 'Subscribing...' : 'Subscribe'}
-                    </button>
-                  </div>
-                </form>
+                </button>
+              </div>
+            </form>
               </>
             ) : (
               <div className="bg-green-50 border border-green-200 text-green-700 px-3 py-2 rounded-md mb-4 text-sm">

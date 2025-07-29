@@ -84,6 +84,19 @@ const blogPosts = [
     },
     category: "Financial Services",
     slug: "confidential-computing-finance"
+  },
+  {
+    id: 7,
+    title: "TOGAF ADM for Enterprise Architecture",
+    excerpt: "A comprehensive guide to the TOGAF Architecture Development Method and its key phases, documents, and artifacts for enterprise architecture development.",
+    date: "June 14, 2025",
+    image: "https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    author: {
+      name: "Priya Ranjan Kumar",
+      avatar: "/1634105594218.jpeg"
+    },
+    category: "Enterprise Architecture",
+    slug: "togaf-adm-enterprise-architecture"
   }
 ];
 

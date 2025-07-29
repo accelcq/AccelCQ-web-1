@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Building, Users, Layers, Code, CheckCircle, Target, Zap, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Building, Users, Layers, Code, CheckCircle, Target, Zap, BookOpen, ArrowRight } from 'lucide-react';
 import PageHeader from '../components/common/PageHeader';
 import SectionHeading from '../components/common/SectionHeading';
 
@@ -39,7 +40,17 @@ const EnterpriseArchitecture = () => {
     {
       title: 'Architecture Development Method (ADM)',
       description: 'Complete ADM cycle implementation from Preliminary Phase through Implementation Governance',
-      features: ['Phase A: Architecture Vision', 'Phase B: Business Architecture', 'Phase C: Information Systems Architecture', 'Phase D: Technology Architecture']
+      features: [
+        'Preliminary Phase: Framework Setup', 
+        'Phase A: Architecture Vision', 
+        'Phase B: Business Architecture', 
+        'Phase C: Information Systems Architecture', 
+        'Phase D: Technology Architecture',
+        'Phase E: Opportunities and Solutions',
+        'Phase F: Migration Planning',
+        'Phase G: Implementation Governance',
+        'Phase H: Architecture Change Management'
+      ]
     },
     {
       title: 'Architecture Content Framework',
@@ -192,9 +203,18 @@ const EnterpriseArchitecture = () => {
       <section id="togaf-10" className="section">
         <div className="container-custom">
           <SectionHeading
-            title="TOGAF 10 Implementation"
+            title="About TOGAF 10"
             subtitle="Complete enterprise architecture development using The Open Group Architecture Framework"
           />
+          
+          <div className="text-center mb-8">
+            <Link 
+              to="/blog/togaf-adm-enterprise-architecture" 
+              className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium transition-colors"
+            >
+              Learn more <ArrowRight size={16} className="ml-1" />
+            </Link>
+          </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {togafCapabilities.map((capability, index) => (
@@ -253,6 +273,58 @@ const EnterpriseArchitecture = () => {
                 </ul>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Scripting for Sparx EA Section */}
+      <section id="scripting-for-ea" className="section">
+        <div className="container-custom">
+          <SectionHeading
+            title="Scripting for Sparx EA"
+            subtitle="Custom automation and scripting solutions to enhance your Enterprise Architect workflows"
+          />
+          
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              className="bg-white border border-gray-200 rounded-lg p-8 shadow-md"
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-gray-600 text-lg leading-relaxed">
+                AccelCQ offers comprehensive scripting solutions for Sparx Systems Enterprise Architect (EA), enabling organizations to fully automate and customize their enterprise architecture processes. Our team specializes in developing VBScripts and custom scripts to streamline the generation of architectural models, automate repetitive tasks, and seamlessly integrate EA with your existing workflows.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed mt-4">
+                Whether you require automated diagram creation, batch processing, or enhanced reporting, AccelCQ empowers you to unlock the full potential of Sparx EA—ensuring accuracy, efficiency, and scalability for all your architecture initiatives.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div className="text-center">
+                  <div className="bg-primary-50 rounded-lg p-4 mb-4">
+                    <Code size={32} className="text-primary-600 mx-auto" />
+                  </div>
+                  <h4 className="font-semibold text-gray-900 mb-2">VBScript Development</h4>
+                  <p className="text-gray-600 text-sm">Custom VBScripts for EA automation and workflow enhancement</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-primary-50 rounded-lg p-4 mb-4">
+                    <Zap size={32} className="text-primary-600 mx-auto" />
+                  </div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Process Automation</h4>
+                  <p className="text-gray-600 text-sm">Automated diagram generation and batch processing capabilities</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-primary-50 rounded-lg p-4 mb-4">
+                    <Layers size={32} className="text-primary-600 mx-auto" />
+                  </div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Integration Solutions</h4>
+                  <p className="text-gray-600 text-sm">Seamless integration with existing workflows and systems</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
